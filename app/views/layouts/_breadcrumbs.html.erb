@@ -1,0 +1,16 @@
+<div class="page-breadcrumbs">
+    <ul class="breadcrumb">
+    	<% @crumbs.each do |crumb| %>
+        	<li class='<%= "active"  if current_page?(crumb[2]) %>'>
+        		<% unless crumb[0].blank? or crumb[0] == '' %>
+            		<i class="<%= crumb[0] %>"></i>
+            	<% end %>
+            	<% unless current_page?(crumb[2]) %>
+            		<%= link_to crumb[1], crumb[2] %>
+            	<% else %>
+            		<%= crumb[1] %>
+            	<% end %>
+        	</li>
+        <% end %>
+    </ul>
+</div>

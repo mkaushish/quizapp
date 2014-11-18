@@ -1,0 +1,6 @@
+html='<div id="new_question" ><div class="row"><div class="col-md-12"><%= j render "questions/form" %></div></div></div></div>';
+bootbox.dialog({
+    message: html,
+    title: "New Question",
+    className: "modal-darkorange",
+});

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  checked: false
+  points_c: 1
+  points_w: 1
+
+two:
+  description: MyText
+  checked: false
+  points_c: 1
+  points_w: 1

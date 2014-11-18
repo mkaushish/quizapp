@@ -1,0 +1,24 @@
+<%= simple_nested_form_for(@question) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.text_area :description, :class => 'summernote' %>
+    <%= f.input :type %>
+    Computer Graded?: <%= f.check_box :grading %>
+    Survey?: <%= f.check_box :survey %>
+  </div>
+  <%= f.fields_for :answers do |builder| %>
+  	<%= builder.text_area :description %>
+  	<%= builder.input :points_c %>
+  	<%= builder.input :points_w %>
+  	<%= builder.check_box :checked %>
+  	<%= builder.hidden_field :id, value:builder.object.id unless builder.object.id.blank? %>
+  	<%= builder.link_to_remove "<span class='glyphicon glyphicon-remove'></span>".html_safe %>
+  <% end %>
+
+  <p style="text-align: center;"><%= f.link_to_add "<span class='glyphicon glyphicon-plus'></span>".html_safe, :answers %></p>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

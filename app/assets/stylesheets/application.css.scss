@@ -11,5 +11,12 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-awesome
  *= require_self
  */
+
+
+
+@import "summernote";
+@import "codemirror";
+@import "codemirror/themes/solarized";

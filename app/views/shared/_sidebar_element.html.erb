@@ -1,0 +1,7 @@
+<li class="<%= 'active' if current_page?(path) %>">
+	<% if defined? remote and remote == true %>
+    	<%= link_to raw("<i class='menu-icon #{icon_class}'></i><span class='menu-text'> #{item_name} </span>"), path, remote: true %>
+    <% else %>
+    	<%= link_to raw("<i class='menu-icon #{icon_class}'></i><span class='menu-text'> #{item_name} </span>"), path %>
+    <% end %>
+</li>

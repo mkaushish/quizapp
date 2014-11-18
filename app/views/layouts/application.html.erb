@@ -3,6 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Quizapp" %></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css">
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Quizapp" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -12,9 +13,12 @@
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+      <div class="main-container container-fluid">
+        <div class="page-container">
+          
+          <%= render 'layouts/sidebar' %>
+          <%= render 'layouts/page_content' %>
+        </div>
+      </div>
   </body>
 </html>

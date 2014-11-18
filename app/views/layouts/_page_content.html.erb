@@ -1,0 +1,9 @@
+<div class="page-content">
+    <%= render 'layouts/breadcrumbs', :@crumbs => @crumbs if defined? @crumbs  %>
+    <%= render 'layouts/header', :@header_title => @header_title if defined? @header_title %>
+    <div class='page-body'>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+    </div>
+</div>
+

@@ -1,0 +1,29 @@
+<h1>Listing user_quizzes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Quiz</th>
+      <th>Relationship</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_quizzes.each do |user_quiz| %>
+      <tr>
+        <td><%= user_quiz.user_id %></td>
+        <td><%= user_quiz.quiz_id %></td>
+        <td><%= user_quiz.relationship %></td>
+        <td><%= link_to 'Show', user_quiz %></td>
+        <td><%= link_to 'Edit', edit_user_quiz_path(user_quiz) %></td>
+        <td><%= link_to 'Destroy', user_quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User quiz', new_user_quiz_path %>

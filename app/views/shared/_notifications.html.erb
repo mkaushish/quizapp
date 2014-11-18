@@ -1,0 +1,18 @@
+
+    <a class=" dropdown-toggle" data-toggle="dropdown" title="Help" href="#">
+        <i class="icon fa fa-warning"></i>
+        <span class="badge"><%=@notifications.count%></span>
+    </a>
+    <!--Notification Dropdown-->
+    <ul class="pull-right dropdown-menu dropdown-arrow dropdown-notifications">
+        <% @notifications.each do |notification| %>
+            <%= render 'shared/notification', notification: notification %>
+        <% end %>
+        
+        <li class="dropdown-footer ">
+            <span>
+                Date: <%= Date.today %>
+            </span>
+        </li>
+    </ul>
+    <!--/Notification Dropdown-->

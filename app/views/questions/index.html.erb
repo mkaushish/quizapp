@@ -1,0 +1,21 @@
+<%#= form_for :quiz_questions do |f| %>
+<%#= f.collection_select :quiz_id, Quiz.all, :id, :title, { :prompt => "Select Quiz"} %>
+<% @questions.each do |question| %>
+<div class='col-md-6'>
+  <div class='widget'>
+    <div class='widget-header bordered-bottom bordered-themeprimary'>
+      <span class='widget-caption themeprimary'><%#=f.check_box :question_id, value:question.id %><%=question.title%></span>
+    </div>
+    <div class='widget-body'>
+      <div class='widget-main'>
+        <p><%= question.description %></p>
+        <span><%= question.type %></span>
+        <span><%= link_to 'Show', question %></span>
+        <span><%= link_to 'Edit', edit_question_path(question) %></span>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<%#= f.submit %>
+<%# end %>

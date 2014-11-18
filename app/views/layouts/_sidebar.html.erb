@@ -1,0 +1,22 @@
+<div class="page-sidebar" id="sidebar">
+    <div class="sidebar-header-wrapper">
+        <%= render 'shared/search' %>
+    </div>
+    <ul class="nav sidebar-menu">
+        
+        <%= render 'shared/sidebar_element', icon_class: 'glyphicon glyphicon-home', item_name: 'Dashboard', path: root_path %>
+        <%= render 'shared/sidebar_element', icon_class: 'fa fa-th', item_name: 'Quizzes', path: quizzes_path %>
+        <li>
+            <a href="#" class="menu-dropdown">
+                <i class="menu-icon fa fa-desktop"></i>
+                <span class="menu-text"> Questions </span>
+                <i class="menu-expand"></i>
+            </a>
+
+            <ul class="submenu">
+                <%= render 'shared/sidebar_element', icon_class: '', item_name: 'My Questions', path: questions_path %>
+                <%= render 'shared/sidebar_element', icon_class: '', item_name: 'New Question', path: new_question_path, remote: true %>
+            </ul>
+        </li>
+    </ul>
+</div>

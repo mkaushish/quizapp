@@ -1,0 +1,19 @@
+<a class="dropdown-toggle" data-toggle="dropdown" title="Tasks" href="#">
+    <i class="icon fa fa-tasks"></i>
+    <span class="badge"><%= @tasks.count %></span>
+</a>
+                                <!--Tasks Dropdown-->
+<ul class="pull-right dropdown-menu dropdown-tasks dropdown-arrow ">
+    <li class="dropdown-header bordered-darkorange">
+        <i class="fa fa-tasks"></i>
+        <%= @tasks.count %> Tasks In Progress
+    </li>
+    <%= @tasks.each do |task| %>
+        <%= render 'shared/tasks' %>
+    <% end %>
+    
+    <li class="dropdown-footer">
+        <%= link_to 'See All Tasks', tasks_path %>
+        <button class="btn btn-xs btn-default shiny darkorange icon-only pull-right"><i class="fa fa-check"></i></button>
+    </li>
+</ul>

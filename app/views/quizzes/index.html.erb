@@ -1,0 +1,23 @@
+
+    <% @quizzes.each do |quiz| %>
+    
+      <div class='col-md-6'>
+        <div class='widget'>
+          <div class='widget-header bordered-bottom bordered-themeprimary'>
+            <span class='widget-caption themeprimary'><%#=f.check_box :question_id, value:quiz.id %><%=quiz.title%></span>
+          </div>
+          <div class='widget-body'>
+            <div class='widget-main'>
+              <p><%#= quiz.description %></p>
+              <span><%= quiz.start_time %></span>
+              <span><%= quiz.end_time %></span>
+              <span><%= link_to 'Show', quiz %></span>
+              <span><%= link_to 'Settings', edit_quiz_path(quiz) %></span>
+              <span><%= link_to 'Edit', quiz_questions_path(:quiz_id => quiz.id) %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+<%= link_to 'New Quiz', new_quiz_path %>

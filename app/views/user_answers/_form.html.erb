@@ -1,0 +1,14 @@
+<%= simple_form_for(@user_answer) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :response_id %>
+    <%= f.input :points %>
+    <%= f.input :answer_id %>
+    <%= f.input :correct %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

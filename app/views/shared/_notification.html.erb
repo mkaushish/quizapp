@@ -1,0 +1,13 @@
+<li>
+    <%= link_to notification do %>
+        <div class="clearfix">
+            <div class="notification-icon">
+                <i class="<%=NOTIFICATION_ICON[notification.type]%>"></i>
+            </div>
+            <div class="notification-body">
+                <span class="title"><%=notification.title%></span>
+                <span class="description"><%=notification.description%></span>
+            </div>
+        </div>
+    <% end %>
+</li>
